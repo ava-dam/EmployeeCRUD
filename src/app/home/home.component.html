@@ -1,0 +1,111 @@
+<!-- <mat-toolbar>Employee Management System: Create Employee
+    <span class="example-spacer"></span>
+    <div class="menu-buttons">
+    <button mat-raised-button color="warn" (click)="goHome()">Back Home</button>
+    </div>
+    &nbsp;&nbsp;
+    <button mat-raised-button color="warn" (click)="logOut()">Log Out</button>
+</mat-toolbar>
+<br> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav position="start" [mode]="'over'">
+        <app-sidenav (closeSideNav)="sidenav.close()"></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-navbar (SideNavToggle)="sidenav.toggle()"></app-navbar>
+    <br>
+    <main>
+        <div class="form-container" style="width: 800 px; margin: 0 auto;">
+            <form [formGroup]="profileForm">
+                <div>
+                    <div class="form-group">
+                        <div class="form-container">
+                            <mat-form-field appearance="outline">
+                            <mat-label>Enter ID</mat-label>
+                            <input matInput id="firstname" type="text" formControlName="id" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div style="float: left; margin-right: 5px;">
+                            <mat-form-field appearance="outline">
+                            <mat-label>Enter First Name</mat-label>
+                            <input matInput id="firstname" type="text" formControlName="firstname" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div style="float: left">
+                            <mat-form-field appearance="outline">
+                            <mat-label>Enter Last Name</mat-label>
+                            <input matInput formControlName="lastname" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Choose a date</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="dob" [max]="today">
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div style="float: left; margin-right: 5px;">
+                            <mat-form-field appearance="outline">
+                            <mat-label>Address Line 1</mat-label>
+                            <input matInput formControlName="add1" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div style="float: left; margin-right: 5px;">
+                            <mat-form-field appearance="outline">
+                            <mat-label>Address Line 2</mat-label>
+                            <input matInput formControlName="add2" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                            <mat-label>City</mat-label>
+                            <input matInput formControlName="city" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>State</mat-label>
+                                <select matNativeControl required formControlName="state">
+                                  <option value="Maharashtra">Maharashtra</option>
+                                  <option value="Karnataka">Karnataka</option>
+                                  <option value="Haryana">Haryana</option>
+                                  <option value="Delhi">Delhi</option>
+                            </select>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                            <mat-label>Zip</mat-label>
+                            <input matInput formControlName="zip" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Department</mat-label>
+                                <select matNativeControl required formControlName="dept">
+                                  <option value="IT">IT</option>
+                                  <option value="Payments">Payments</option>
+                                  <option value="App">App</option>
+                                  <option value="Support">Support</option>
+                            </select>
+                            </mat-form-field>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <br>
+        <div class="mat-submit">
+            <button mat-raised-button type="submit" (click)="onSubmit()" color="primary" [disabled]="profileForm.invalid" style="display: flex; margin: 0 auto;">Submit</button>
+            <button mat-raised-button type="reset" (click)="onReset()" color="primary" style="display: flex; margin: 0 auto;">Reset</button>
+        </div>
+    </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

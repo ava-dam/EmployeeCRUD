@@ -1,0 +1,63 @@
+mat-sidenav-content {
+    min-height: 80rem;
+}
+
+.card {
+    display: flex;
+    margin: 2rem;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+
+.particulars-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.label {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 20px;
+}
+
+.photo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.text{
+    display: flex;
+    margin-bottom: 10px; 
+}
+
+.image {
+    display: flex;
+    height: 190px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.containers {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.heading {
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.bold {
+    font-weight: 500;
+    font-size: larger;
+}

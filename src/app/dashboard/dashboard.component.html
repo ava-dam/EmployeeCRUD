@@ -1,0 +1,141 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav position="start" [mode]="'over'">
+        <app-sidenav (closeSideNav)="sidenav.close()"></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-navbar (SideNavToggle)="sidenav.toggle()"></app-navbar>
+    <main>
+        <div class="details">
+            Hello, <b>{{this.user.firstname}}</b>!
+            <br>
+            <mat-card class="card">
+                <div class="photo">
+                    <p class="image heading">
+                        {{this.user.firstname}} {{this.user.lastname}}  |  {{this.user.id}}
+                    </p>
+                </div>
+                <div class="containers">
+                    <div class="label heading">
+                        Personal Details
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="particulars-container">
+                    <div class="label">
+                        <div class="bold">
+                            First Name &nbsp;
+                        </div>
+                        <div class="text">
+                            {{this.user.firstname}}
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="bold">
+                            Last Name &nbsp;
+                        </div>
+                        <div>
+                            {{this.user.lastname}}
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="bold">
+                            Date of Birth &nbsp;
+                        </div>
+                        <div>
+                            {{this.user.dob?.slice(0, -14)}}
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="bold">
+                            Address &nbsp;
+                        </div>
+                        <div>
+                            {{this.user.add1}},<br> {{this.user.add2}} 
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="bold">
+                            City &nbsp;
+                        </div>
+                        <div>
+                            {{this.user.city}}
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="bold">
+                            State &nbsp;
+                        </div>
+                        <div>
+                            {{this.user.state}}
+                        </div>
+                    </div>  
+                    <div class="label">
+                        <div class="bold">
+                            Pin &nbsp;
+                        </div>
+                        <div>
+                            {{this.user.zip}}
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="bold">
+                            Department &nbsp;
+                        </div>
+                        <div>
+                            {{this.user.dept}}
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="bold">
+                            Role &nbsp;
+                        </div>
+                        <div>
+                            {{this.user.role}}
+                        </div>
+                    </div>
+                    </div>
+                    <div class="label heading">
+                        Leave Details
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="particulars-container">
+                        <div class="label">
+                            <div class="bold">
+                                Total Leave Quota &nbsp;
+                            </div>
+                            <div class="text">
+                                {{this.totalLeaves}}
+                            </div>
+                        </div>
+                        <div class="label">
+                            <div class="bold">
+                                Leaves Available &nbsp;
+                            </div>
+                            <div class="text">
+                                {{this.totalLeaves - this.leavesTaken}}
+                            </div>
+                        </div>
+                        <div class="label">
+                            <div class="bold">
+                                Leaves Taken &nbsp;
+                            </div>
+                            <div class="text">
+                                {{this.leavesTaken}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <br>
+        <div class="buttons">
+        <ng-container matColumnDef="edit">
+            <button mat-raised-button (click)="apply()">Apply For a Leave</button>
+        </ng-container>&nbsp;
+        <ng-container matColumnDef="edit">
+                <button mat-raised-button (click)="edit()">Edit Profile </button>
+        </ng-container>
+        </div>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

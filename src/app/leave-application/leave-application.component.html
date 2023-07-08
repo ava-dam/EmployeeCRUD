@@ -1,0 +1,44 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav position="start" [mode]="'over'">
+        <app-sidenav (closeSideNav)="sidenav.close()"></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-navbar (SideNavToggle)="sidenav.toggle()"></app-navbar>
+        <main>
+            <div class="form">
+                <form [formGroup]="leaveForm">
+                    <div class="form-group">
+                        <div>
+                            <mat-form-field appearance="outline">
+                            <mat-label>Enter Leave Start Date</mat-label>
+                            <input matInput [matDatepicker]="picker" id="leaveStart" type="text" formControlName="leaveStart">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        &nbsp;&nbsp;
+                        <div>
+                            <mat-form-field appearance="outline">
+                            <mat-label>Enter Leave End Date</mat-label>
+                            <input matInput [matDatepicker]="picker2" id="leaveEnd" type="text" formControlName="leaveEnd">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        &nbsp;&nbsp;
+                        <div>
+                            <mat-form-field appearance="outline">
+                            <mat-label>Enter Leave Reason</mat-label>
+                            <input matInput id="leaveReason" type="text" formControlName="leaveReason" autocomplete="off">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="submit-div">
+                        <button mat-raised-button type="submit" color="primary" class="submit" (click)="onSubmit()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

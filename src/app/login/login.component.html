@@ -1,0 +1,34 @@
+<mat-toolbar class="toolbar">Employee Management System: Login
+</mat-toolbar>
+<div class="form-container" style="width: 800 px; margin: 0 auto;">
+    <form>
+        <div class="username">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter ID</mat-label>
+                <input matInput id="id" type="text" autocomplete="off" [(ngModel)]="credentials.id" name="ID" [required]="false">
+            </mat-form-field>
+        </div>
+        <br>
+        <div class="email">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter E-mail</mat-label>
+                <input matInput id="id" type="text" autocomplete="off" [(ngModel)]="credentials.email" name="email" [required]="true">
+            </mat-form-field>
+        </div>
+        <br>
+        <div class="password">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Password</mat-label>
+                <input matInput id="password" type="password" autocomplete="off" [(ngModel)]="credentials.password" name="password" [required]="true">
+                <mat-error></mat-error>
+            </mat-form-field>
+        </div>
+        <br>
+    </form>
+    <br>
+    <div class="mat-submit">
+        <button mat-raised-button type="submit" (click)="login()" color="primary" class="submit">Login</button>
+        <br>
+        <a href="/register" class="register">New User? Register here!</a>
+    </div>
+</div>

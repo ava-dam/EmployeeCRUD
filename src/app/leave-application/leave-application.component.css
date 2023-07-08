@@ -1,0 +1,22 @@
+mat-sidenav-content {
+    min-height: 80rem;
+}
+
+.form-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.submit-div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 5rem;
+    justify-content: center;
+}
